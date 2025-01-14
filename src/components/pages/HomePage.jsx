@@ -16,7 +16,7 @@ const HomePage = () => {
     try {
       const response = await axios.get(url);
       setMovies(response.data.results);
-      setError(null); // Reset error state when data is fetched successfully
+      setError(null); 
     } catch (error) {
       console.error("Error fetching trending movies:", error);
       setError("Failed to fetch movies. Please try again later.");
@@ -35,7 +35,7 @@ const HomePage = () => {
         <button onClick={() => setCategory("week")}>Trending This Week</button>
       </div>
 
-      {error && <p>{error}</p>} {/* Display error if exists */}
+      {error && <p>{error}</p>} 
 
       <MovieList movies={movies} />
     </div>

@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
+import { useSearchParams, useLocation } from "react-router-dom";
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
 import MovieList from "../components/MovieList/MovieList";
+
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [query, setQuery] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const location = useLocation();
 
   const searchQuery = query.get("query") || "";
+
   useEffect(() => {
     const fetchMovies = async () => {
       if (!searchQuery) return;
 
       setLoading(true);
-      setError(null); //
+      setError(null);
 
       const url = `https://api.themoviedb.org/3/search/movie?api_key=af069d5a4aa6dab18750675f951f88b6&query=${searchQuery}&language=en-US`;
 
@@ -30,8 +33,10 @@ const MoviesPage = () => {
 
     fetchMovies();
   }, [searchQuery]);
+
   const handleSearch = (event) => {
-    setQuery({ query: event.target.value });
+    const value = event.target.value;
+    setQuery(value ? { query: value } : {});
   };
 
   return (
@@ -45,7 +50,7 @@ const MoviesPage = () => {
       />
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <MovieList movies={movies} />
+      <MovieList movies={movies} location={location} />
     </div>
   );
 };

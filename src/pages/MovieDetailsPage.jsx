@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams, Link, useNavigate, Route, Routes } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useParams, Link, Route, Routes, useLocation } from "react-router-dom";
 import axios from "axios";
 
 import MovieCast from "../components/MovieCast/MovieCast";
@@ -8,7 +8,12 @@ import MovieReviews from "../components/MovieReviews/MovieReviews";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const navigate = useNavigate();
+
+  const location = useLocation();
+  const goBackRef = useRef(location.state?.from || "/");
+  useEffect(() => {
+    goBackRef.current = location.state?.from || "/";
+  }, [location]);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -31,14 +36,9 @@ const MovieDetailsPage = () => {
 
   const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
-
   return (
     <div>
-      <button onClick={handleGoBack}>Go Back</button>
-
+      <Link to={goBackRef.current}>Go back</Link>
       <div>
         <img src={imageUrl} alt={movie.title} />
         <div>

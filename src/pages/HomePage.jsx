@@ -1,7 +1,10 @@
+// HomePage
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MovieList from "../components/MovieList/MovieList";
 import s from "./pages.module.css";
+import { useLocation } from "react-router-dom";
+
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [category, setCategory] = useState("day");
@@ -9,6 +12,8 @@ const HomePage = () => {
 
   const API_KEY = "af069d5a4aa6dab18750675f951f88b6";
   const BASE_URL = "https://api.themoviedb.org/3/trending/movie/";
+
+  const location = useLocation();
 
   const fetchTrendingMovies = async (timeframe) => {
     const url = `${BASE_URL}${timeframe}?api_key=${API_KEY}&language=en-US&page=1`;
@@ -38,10 +43,8 @@ const HomePage = () => {
           Trend Week Movie
         </button>
       </div>
-
       {error && <p>{error}</p>}
-
-      <MovieList movies={movies} />
+      <MovieList movies={movies} location={location} />
     </div>
   );
 };

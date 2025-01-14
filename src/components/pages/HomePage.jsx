@@ -31,8 +31,8 @@ const HomePage = () => {
     <div>
       <h1>Trending Movies</h1>
       <div>
-        <button onClick={() => setCategory("day")}>Trending Today</button>
-        <button onClick={() => setCategory("week")}>Trending This Week</button>
+        <button onClick={() => setCategory("day")}>Trend Day Movie</button>
+        <button onClick={() => setCategory("week")}>Trend Week Movie</button>
       </div>
 
       {error && <p>{error}</p>} 

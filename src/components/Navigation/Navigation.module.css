@@ -1,0 +1,43 @@
+.headerNav {
+  height: 50px;
+  background-color: #386492;
+  box-shadow: 0 4px 4px #2b4e74; /* Нижняя тень */
+}
+.nav {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.btn {
+  margin-right: 10px;
+  padding: 5px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  letter-spacing: 3px;
+  background-color: hsl(239, 50%, 45%);
+
+  box-shadow: rgb(49, 57, 165) 0px 7px 29px 0px;
+}
+
+.btn:active {
+  letter-spacing: 3px;
+  background-color: hsl(239, 50%, 45%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(49, 57, 165) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+.text {
+  color: black;
+  text-decoration: none;
+}

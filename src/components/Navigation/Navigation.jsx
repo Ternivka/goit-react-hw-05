@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
-
+import s from "./Navigation.module.css";
 
 const Navigation = () => {
   return (
-    <header>
-      <nav>
-        <button>
-          <Link to="/">Home</Link>
+    <header className={s.headerNav}>
+      <nav className={s.nav}>
+        <button className={s.btn}>
+          <Link to="/" className={s.text}>
+            Home
+          </Link>
         </button>
-        <button>
-          <Link to="/movies">Movies</Link>
+        <button className={s.btn}>
+          <Link to="/movies" className={s.text}>
+            Movies
+          </Link>
         </button>
       </nav>
     </header>

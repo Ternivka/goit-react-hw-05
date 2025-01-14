@@ -34,14 +34,12 @@ const MovieDetailsPage = () => {
   };
 
   return (
-    <div className="movie-details">
-      <button onClick={handleGoBack} className="go-back-button">
-        Go Back
-      </button>
+    <div>
+      <button onClick={handleGoBack}>Go Back</button>
 
-      <div className="details-container">
-        <img src={imageUrl} alt={movie.title} className="movie-poster" />
-        <div className="movie-info">
+      <div>
+        <img src={imageUrl} alt={movie.title} />
+        <div>
           <h1>{movie.title}</h1>
           <p>
             <strong>Rating:</strong> {movie.vote_average} / 10
@@ -58,7 +56,7 @@ const MovieDetailsPage = () => {
         </div>
       </div>
 
-      <div className="button-container">
+      <div>
         <button>
           <Link to={`/movies/${movieId}/cast`}>Cast</Link>
         </button>

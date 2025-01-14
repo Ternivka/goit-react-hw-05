@@ -3,12 +3,12 @@ import "../../App.css";
 
 const Navigation = () => {
   return (
-    <header className="navigation">
+    <header>
       <nav>
-        <button className="nav-button">
+        <button>
           <Link to="/">Home</Link>
         </button>
-        <button className="nav-button">
+        <button>
           <Link to="/movies">Movies</Link>
         </button>
       </nav>

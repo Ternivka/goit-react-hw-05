@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MovieList from "../components/MovieList/MovieList";
-
+import s from "./pages.module.css";
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [category, setCategory] = useState("day");
@@ -31,8 +31,12 @@ const HomePage = () => {
     <div>
       <h1>Trending Movies</h1>
       <div>
-        <button onClick={() => setCategory("day")}>Trend Day Movie</button>
-        <button onClick={() => setCategory("week")}>Trend Week Movie</button>
+        <button onClick={() => setCategory("day")} className={s.trendBtn}>
+          Trend Day Movie
+        </button>
+        <button onClick={() => setCategory("week")} className={s.trendBtn}>
+          Trend Week Movie
+        </button>
       </div>
 
       {error && <p>{error}</p>}

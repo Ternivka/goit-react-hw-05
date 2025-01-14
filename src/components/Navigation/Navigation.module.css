@@ -1,24 +1,4 @@
-.headerNav {
-  height: 50px;
-  background-color: #386492;
-  box-shadow: 0 4px 4px #2b4e74; /* Нижняя тень */
-}
-.nav {
-  padding-top: 14px;
-
-  padding-left: 10px;
-}
 .btn {
+  margin-top: 10px;
   margin-right: 10px;
-  padding: 5px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  border: 0;
-
-  background-color: transparent;
-}
-
-.text {
-  color: black;
-  text-decoration: none;
 }

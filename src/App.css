@@ -17,8 +17,7 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-.navigation{
-  background-color: #d3d4d8;}
+
 
 /* Контейнер для выравнивания лоадера по центру */
 .loader-container {

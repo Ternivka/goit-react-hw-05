@@ -17,6 +17,36 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+const Loader = () => (
+  <div style={styles.loaderContainer}>
+    <div style={styles.loader}></div>
+  </div>
+);
+
+/* Контейнер для выравнивания лоадера по центру */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Высота экрана */
+}
+
+/* Стили для самого индикатора загрузки */
+.loader {
+  border: 8px solid #f3f3f3;  /* Светлый фон */
+  border-top: 8px solid #3498db; /* Цветная верхняя часть */
+  border-radius: 50%; /* Круглый индикатор */
+  width: 50px; /* Ширина */
+  height: 50px; /* Высота */
+  animation: spin 1s linear infinite; /* Анимация вращения */
+}
+
+/* Определение анимации вращения */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 @keyframes logo-spin {
   from {

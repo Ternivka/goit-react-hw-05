@@ -24,17 +24,17 @@ const MovieCast = () => {
   }, [movieId]);
 
   return (
-    <div className="cast-section">
+    <div>
       {cast.length ? (
-        <div className="cast-list">
+        <div>
           {cast.map((actor) => (
-            <div key={actor.id} className="actor-card">
+            <div key={actor.id}>
               <img
                 src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                 alt={actor.name}
-                className="actor-image"
+                
               />
-              <div className="actor-info">
+              <div>
                 <h4>{actor.name}</h4>
                 <p>{actor.character}</p>
               </div>

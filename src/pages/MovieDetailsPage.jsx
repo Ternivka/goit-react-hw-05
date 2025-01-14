@@ -25,7 +25,9 @@ const MovieDetailsPage = () => {
     fetchMovieDetails();
   }, [movieId]);
 
-  if (!movie) return <p>Loading...</p>;
+  if (!movie) {
+    return <p>Loading...</p>;
+  }
 
   const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 

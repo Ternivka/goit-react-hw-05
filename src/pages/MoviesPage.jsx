@@ -22,7 +22,7 @@ const MoviesPage = () => {
         const response = await axios.get(url);
         setMovies(response.data.results);
       } catch (err) {
-        setError("Failed to fetch movies");
+        setError(err.message || "Failed to fetch movies");
       } finally {
         setLoading(false);
       }

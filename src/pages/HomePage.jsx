@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from "react";
 import axios from "axios";
-import MovieList from "../MovieList/MovieList";
+import MovieList from "../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -17,7 +16,7 @@ const HomePage = () => {
     try {
       const response = await axios.get(url);
       setMovies(response.data.results);
-      setError(null); 
+      setError(null);
     } catch (error) {
       console.error("Error fetching trending movies:", error);
       setError("Failed to fetch movies. Please try again later.");
@@ -36,7 +35,7 @@ const HomePage = () => {
         <button onClick={() => setCategory("week")}>Trend Week Movie</button>
       </div>
 
-      {error && <p>{error}</p>} 
+      {error && <p>{error}</p>}
 
       <MovieList movies={movies} />
     </div>

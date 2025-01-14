@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import "../../App.css";
-
+import s from "./MovieList.module.css";
 const MovieList = ({ movies }) => {
   if (movies.length === 0) {
     return <p>No movies found</p>;
   }
 
   return (
-    <ul>
+    <ul className={s.ulMovieList}>
       {movies.map((movie) => (
         <li key={movie.id}>
           <Link to={`/movies/${movie.id}`}>

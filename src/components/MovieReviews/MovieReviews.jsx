@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../../App.css";
+import s from "./MovieReviews.module.css";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -25,7 +25,7 @@ const MovieReviews = () => {
   return (
     <div>
       {reviews.length ? (
-        <ul>
+        <ul className={s.ulReview}>
           {reviews.map((review) => (
             <li key={review.id}>
               <h3>{review.author}</h3>

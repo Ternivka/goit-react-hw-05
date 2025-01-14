@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation/Navigation";
 const HomePage = React.lazy(() => import("./pages/HomePage"));
 const MoviesPage = React.lazy(() => import("./pages/MoviesPage"));
 const MovieDetailsPage = React.lazy(() =>
-  import(".pages/MovieDetailsPage")
+  import("./pages/MovieDetailsPage")
 );
 
 const MovieCast = React.lazy(() => import("./components/MovieCast/MovieCast"));
@@ -14,7 +14,7 @@ const MovieReviews = React.lazy(() =>
   import("./components/MovieReviews/MovieReviews")
 );
 const NotFoundPage = React.lazy(() =>
-  import(".pages/NotFoundPage")
+  import("./pages/NotFoundPage")
 );
 
 const App = () => {

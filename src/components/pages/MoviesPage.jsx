@@ -39,7 +39,7 @@ const MoviesPage = () => {
       <h1>Search Movies</h1>
       <input
         type="text"
-        placeholder="Search for a movie..."
+        placeholder="Search movie"
         value={searchQuery}
         onChange={handleSearch}
       />

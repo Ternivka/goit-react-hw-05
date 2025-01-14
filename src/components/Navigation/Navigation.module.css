@@ -23,7 +23,6 @@
 .btn:hover {
   letter-spacing: 3px;
   background-color: hsl(239, 50%, 45%);
-
   box-shadow: rgb(49, 57, 165) 0px 7px 29px 0px;
 }
 

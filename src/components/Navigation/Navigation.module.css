@@ -15,22 +15,6 @@
   cursor: pointer;
   border: 0;
   background-color: transparent;
-  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.btn:hover {
-  letter-spacing: 3px;
-  background-color: hsl(239, 50%, 45%);
-  box-shadow: rgb(49, 57, 165) 0px 7px 29px 0px;
-}
-
-.btn:active {
-  letter-spacing: 3px;
-  background-color: hsl(239, 50%, 45%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(49, 57, 165) 0px 0px 0px 0px;
 }
 
 .text {

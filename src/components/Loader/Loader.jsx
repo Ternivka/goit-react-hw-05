@@ -1,8 +1,8 @@
 import "../../App.css";
 
 const Loader = () => (
-  <div className="loader">
-    <div className="spinner"></div>
+  <div className="loader-container">
+    <div className="loader"></div>
   </div>
 );
 

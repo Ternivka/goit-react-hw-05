@@ -3,10 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
 import Navigation from "./components/Navigation/Navigation";
 
-const HomePage = React.lazy(() => import("./components/pages/HomePage"));
-const MoviesPage = React.lazy(() => import("./components/pages/MoviesPage"));
+const HomePage = React.lazy(() => import("./pages/HomePage"));
+const MoviesPage = React.lazy(() => import("./pages/MoviesPage"));
 const MovieDetailsPage = React.lazy(() =>
-  import("./components/pages/MovieDetailsPage")
+  import(".pages/MovieDetailsPage")
 );
 
 const MovieCast = React.lazy(() => import("./components/MovieCast/MovieCast"));
@@ -14,7 +14,7 @@ const MovieReviews = React.lazy(() =>
   import("./components/MovieReviews/MovieReviews")
 );
 const NotFoundPage = React.lazy(() =>
-  import("./components/pages/NotFoundPage")
+  import(".pages/NotFoundPage")
 );
 
 const App = () => {

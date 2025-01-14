@@ -9,7 +9,7 @@ const MovieDetailsPage = React.lazy(() =>
   import("./components/pages/MovieDetailsPage")
 );
 
-const MovieCast = React.lazy(() => import("./components/pages/MoviesCast"));
+const MovieCast = React.lazy(() => import("./components/pages/MovieCast"));
 const MovieReviews = React.lazy(() =>
   import("./components/MovieReviews/MovieReviews")
 );

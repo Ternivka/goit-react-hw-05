@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams, Link, Route, Routes, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation, Outlet } from "react-router-dom";
 import axios from "axios";
-
-import MovieCast from "../components/MovieCast/MovieCast";
-import MovieReviews from "../components/MovieReviews/MovieReviews";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -11,9 +8,6 @@ const MovieDetailsPage = () => {
 
   const location = useLocation();
   const goBackRef = useRef(location.state?.from || "/");
-  useEffect(() => {
-    goBackRef.current = location.state?.from || "/";
-  }, [location]);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -59,18 +53,11 @@ const MovieDetailsPage = () => {
       </div>
 
       <div>
-        <button>
-          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-        </button>
-        <button>
-          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
-        </button>
+        <Link to={`cast`}>Cast</Link>
+        <Link to={`reviews`}>Reviews</Link>
       </div>
 
-      <Routes>
-        <Route path="cast" element={<MovieCast />} />
-        <Route path="reviews" element={<MovieReviews />} />
-      </Routes>
+      <Outlet />
     </div>
   );
 };

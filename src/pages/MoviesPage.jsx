@@ -36,7 +36,13 @@ const MoviesPage = () => {
 
   const handleSearch = (event) => {
     const value = event.target.value;
-    setQuery(value ? { query: value } : {});
+    const newQuery = new URLSearchParams(query);
+    if (value) {
+      newQuery.set("query", value);
+    } else {
+      newQuery.delete("query");
+    }
+    setQuery(newQuery);
   };
 
   return (
